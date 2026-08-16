@@ -1,12 +1,12 @@
 /* FERRARI 499P 展示站 Service Worker:静态资源缓存 */
-const CACHE = 'f499p-v8';
+const CACHE = 'f499p-v9';
 const PRECACHE = [
   './',
   './index.html',
   './en.html',
-  './css/style.css?v=8',
-  './js/main.js?v=8',
-  './js/lang-detect.js?v=8',
+  './css/style.css?v=9',
+  './js/main.js?v=9',
+  './js/lang-detect.js?v=9',
   './manifest.json'
 ];
 
