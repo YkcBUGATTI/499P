@@ -63,7 +63,9 @@ body {
   font-size: 17px;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  /* 注意:不能用 overflow-x:hidden——它会把 body 变成滚动容器,
+     使 position:sticky(遮盖画廊舞台)失效;clip 不产生滚动容器 */
+  overflow-x: clip;
 }
 
 ::selection { background: var(--red); color: #fff; }
@@ -320,7 +322,7 @@ button { font-family: inherit; color: inherit; background: none; border: none; c
 .cg-text--left { align-items: flex-start; text-align: left; }
 .cg-text__card {
   max-width: 46ch; padding: clamp(18px, 2.6vw, 30px);
-  background: rgba(6, 6, 9, 0.58);
+  background: rgba(6, 6, 9, 0.74);
   backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
   border: 1px solid var(--line);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.4);
