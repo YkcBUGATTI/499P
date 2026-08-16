@@ -287,7 +287,6 @@
     var cgWritten = cgImgs.map(function () { return -1; });
     var cgActive = 0;
     var cgRaf = null;
-    var cgInView = false;
 
     function cgApplyDirect() {
       cgImgs.forEach(function (im, k) {
@@ -327,24 +326,18 @@
       if (cgCount) cgCount.textContent = pad2(idx + 1);
       cgKick();
     }
-    /* 桌面:文字卡进入视口中带 → 激活对应图层 */
+    /* 文字卡进入视口中带 → 激活对应图层。
+       桌面与移动端统一由滚动驱动:移动端卡片堆叠、顶部图层交叉淡化,
+       滚动到哪里就激活哪张,图卡始终同步(移除旧的定时轮播)。 */
     var cgIO = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
-        if (en.isIntersecting && !isMobile()) {
+        if (en.isIntersecting) {
           var idx = cgTexts.indexOf(en.target);
           if (idx >= 0) cgSet(idx);
         }
       });
     }, { rootMargin: '-42% 0px -42% 0px' });
     cgTexts.forEach(function (t) { cgIO.observe(t); });
-    /* 可见性(移动端轮播仅在可见时进行) */
-    new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) { cgInView = en.isIntersecting; });
-    }, { threshold: 0.25 }).observe(cg);
-    /* 移动端:自动轮播 */
-    setInterval(function () {
-      if (isMobile() && cgInView) cgSet(cgActive + 1);
-    }, 3800);
   }
 
   /* ---------- 拖拽换角度(04 空气动力学) ---------- */
