@@ -192,18 +192,18 @@ button { font-family: inherit; color: inherit; background: none; border: none; c
     radial-gradient(120% 90% at 50% 110%, rgba(232, 0, 29, 0.16) 0%, transparent 55%),
     linear-gradient(180deg, rgba(5, 5, 7, 0.55) 0%, rgba(5, 5, 7, 0.1) 35%, rgba(5, 5, 7, 0.72) 78%, var(--bg) 100%);
 }
-.hero__content { position: relative; z-index: 2; width: min(1280px, calc(100% - 48px)); margin: 0 auto; padding: clamp(96px, 14vh, 150px) 0 clamp(120px, 15vh, 190px); }
+.hero__content { position: relative; z-index: 2; width: min(1280px, calc(100% - 48px)); margin: 0 auto; padding: clamp(100px, 14vh, 150px) 0 clamp(132px, 16vh, 210px); }
 .hero__kicker { font-size: 13px; letter-spacing: 0.34em; color: var(--yellow); margin-bottom: 18px; }
 .hero__title {
-  font-size: clamp(62px, 10vw, 148px); line-height: 0.96; font-weight: 500;
+  font-size: clamp(72px, 12vw, 190px); line-height: 0.96; font-weight: 500;
   letter-spacing: 0.02em; color: #fff;
 }
 .hero__title span { display: inline-block; opacity: 0; transform: translateY(0.35em); animation: heroChar 0.9s var(--ease2) forwards; animation-delay: var(--d, 0s); }
 @keyframes heroChar { to { opacity: 1; transform: none; } }
-.hero__sub { font-size: clamp(19px, 2.4vw, 26px); font-weight: 500; margin-top: 10px; color: var(--txt); }
-.hero__desc { max-width: 640px; margin-top: 12px; color: var(--dim); }
+.hero__sub { font-size: clamp(20px, 2.6vw, 28px); font-weight: 500; margin-top: 14px; color: var(--txt); }
+.hero__desc { max-width: 640px; margin-top: 14px; color: var(--dim); line-height: 1.65; }
 .hero__specs {
-  display: flex; flex-wrap: wrap; gap: 14px 38px; margin-top: 26px;
+  display: flex; flex-wrap: wrap; gap: 14px 38px; margin-top: 30px;
   padding: 18px 22px; border: 1px solid var(--line);
   background: rgba(5, 5, 7, 0.24); backdrop-filter: blur(6px);
   width: fit-content; max-width: 100%;
@@ -770,14 +770,14 @@ button { font-family: inherit; color: inherit; background: none; border: none; c
 
 /* ============ 横屏矮视口(手机/小平板横屏)紧凑首屏 ============ */
 @media (max-height: 640px) and (orientation: landscape) {
-  .hero__content { padding: 64px 0 76px; }
-  .hero__kicker { margin-bottom: 8px; }
-  .hero__title { font-size: clamp(48px, 9vh, 84px); }
-  .hero__sub { margin-top: 4px; font-size: clamp(15px, 3.4vh, 19px); }
-  .hero__desc { margin-top: 6px; font-size: 13.5px; line-height: 1.55; max-width: 560px; }
-  .hero__specs { margin-top: 12px; padding: 10px 14px; gap: 6px 22px; }
-  .hero__specs b { font-size: 19px; }
-  .hero__specs span { font-size: 12px; }
-  .hero__specs i { font-size: 11px; }
+  .hero__content { padding: 40px 0 54px; }
+  .hero__kicker { margin-bottom: 6px; font-size: 12px; }
+  .hero__title { font-size: clamp(44px, 8vh, 76px); }
+  .hero__sub { margin-top: 6px; font-size: clamp(15px, 3.4vh, 19px); }
+  .hero__desc { margin-top: 8px; font-size: 13px; line-height: 1.5; max-width: 560px; }
+  .hero__specs { margin-top: 10px; padding: 8px 12px; gap: 4px 18px; }
+  .hero__specs b { font-size: 17px; }
+  .hero__specs span { font-size: 11.5px; }
+  .hero__specs i { font-size: 10.5px; }
   .hero__scroll { display: none; }
 }
