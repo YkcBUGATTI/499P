@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://499p.hypercar.site/sitemap.xml
